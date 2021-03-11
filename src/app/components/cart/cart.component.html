@@ -1,0 +1,10 @@
+<h2>My Cart</h2>
+<div class="purchases-list">
+    <app-cart-item
+        *ngFor="let purchase of purchases; index as i"
+        [purchase]="purchase"
+        [index]="i"
+        (deleteCartItem)="onDeleteCartItem($event)"
+    >
+    </app-cart-item>
+</div>

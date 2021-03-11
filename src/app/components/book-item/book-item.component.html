@@ -1,0 +1,29 @@
+<!-- <mat-card class="card"> -->
+<!-- <input (change)="onToggle(book)" type="checkbox" name="" id="" /> -->
+<!-- <mat-card-title>{{ book.name }}</mat-card-title>
+        <mat-card-content>
+            <p>Description: {{ book.description }}</p>
+            <p>Price: {{ book.price }}</p>
+            <p>Category: {{ book.category }}</p>
+            <p>Year: {{ book.createDate }}</p>
+            <button mat-button color="accent" (click)="onBuy(book)">Buy</button>
+        </mat-card-content> -->
+
+<mat-accordion class="card">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title [ngClass]="setClasses()">
+                {{ book.name }}
+            </mat-panel-title>
+            <mat-panel-description class="desc">
+                <input (change)="onToggle(book)" type="checkbox" id="{{ book.id }}" [checked]="book.isAvailable" />
+                <p>Price: {{ book.price }} $</p>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Description: {{ book.description }}</p>
+        <p>Category: {{ book.category }}</p>
+        <p>Year: {{ book.createDate }}</p>
+        <button mat-button color="accent" (click)="onBuy(book)" [disabled]="!book.isAvailable">Buy</button>
+    </mat-expansion-panel>
+</mat-accordion>
+<!-- </mat-card> -->

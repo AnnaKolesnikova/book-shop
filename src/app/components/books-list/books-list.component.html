@@ -1,0 +1,4 @@
+<h2>List of Books</h2>
+<div class="books-list">
+    <app-book-item *ngFor="let book of books" [book]="book" (Buy)="onBuyHandler($event)"> </app-book-item>
+</div>

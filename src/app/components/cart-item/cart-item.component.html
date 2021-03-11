@@ -1,0 +1,16 @@
+<mat-accordion class="card">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span class="card-item-index">{{ index + 1 }}.</span>
+                {{ purchase.name }}
+            </mat-panel-title>
+            <mat-panel-description class="cart-desc">
+                <p>Amount: {{ purchase.count }}</p>
+                <mat-divider [vertical]="true"></mat-divider>
+                <p>Price: {{ purchase.price }} $</p>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-button color="warn" (click)="onDeleteCartItem(purchase.id)">Remove</button>
+    </mat-expansion-panel>
+</mat-accordion>
